@@ -54,6 +54,7 @@ table {
 /* 顏色 */
 :root {
 	--primary-100: #F5FEE7;
+	--primary-200: #E8FEC5;
 	--primary-400: #57A203;
 
 	--neutral-0: #FFFFFF;
@@ -72,12 +73,28 @@ table {
 /* 清除圖片下方2~3公分的空白 */
 img{
     vertical-align: middle;
+	max-width: 100%;
+	height: auto;
 }
 
 a{
     color: var(--primary-400);
     text-underline-offset: 4px;
     display: block;
+}
+
+nav a{
+    color: var(--neutral-900);
+    text-decoration: none;
+    display: block;
+	font-weight: 500;
+}
+
+footer a{
+    color: var(--neutral-900);
+    text-decoration: none;
+    display: block;
+	font-weight: 500;
 }
 
 body{
@@ -90,8 +107,60 @@ body{
 
 /* 通用樣式 */
 .container {
-	width: 856px;
+	max-width: 1320px;
 	margin: 0 auto;
+	padding-left: 12px;
+	padding-right: 12px;
+}
+
+.row{
+	display: flex;
+	flex-wrap: wrap;
+	margin-right: -12px;
+	margin-left: -12px;
+}
+
+.col-8{
+	padding-left: 12px;
+	padding-right: 12px;
+	width: calc( 100% / 12*8 );
+}
+.col-10{
+	padding-left: 12px;
+	padding-right: 12px;
+	width: calc( 100% / 12*10 );
+}
+
+@media(max-width:767px){
+	.row{
+		margin-left: -6px;
+		margin-right: -6px;
+	}
+	.col-md-4{
+		padding-left: 6px;
+		padding-right: 6px;
+		width: 100%
+	}
+}
+
+.justfly-between{
+	justify-content: space-between;
+}
+
+.justfly-center{
+	justify-content: center;
+}
+
+.flex-wrap{
+	flex-wrap: wrap;
+}
+
+.gap-8{
+	gap: 8px;
+}
+
+.align-center{
+	align-items: center;
 }
 
 .h1{
@@ -118,6 +187,66 @@ body{
 	font-weight: 700;
 }
 
+@media(max-width:767px){
+	.h3-md{
+		font-size: 28px;
+	}
+	.h4-md{
+		font-size: 24px;
+	}
+	.h5-md{
+		font-size: 20px;
+	}
+	.h6-md{
+		font-size: 16px;
+	}
+}
+
+@media(max-width:576px){
+	.h3-sm{
+		font-size: 28px;
+	}
+	.h4-sm{
+		font-size: 24px;
+	}
+	.h5-sm{
+		font-size: 20px;
+	}
+	.h6-sm{
+		font-size: 16px;
+	}
+}
+
+.d-flex{
+	display: flex;
+}
+
+.d-none{
+	display: none;
+}
+
+.bg-primary-200 {
+	background-color: var(--primary-200);
+}
+
+@media(max-width:767px){
+	.d-md-block{
+		display: block;
+	}
+	.d-md-none{
+		display: none;
+	}
+}
+
+@media(max-width:576px){
+	.d-sm-block{
+		display: block;
+	}
+	.d-sm-none{
+		display: none;
+	}
+}
+
 .text-sm{
 	font-size: 14px;
 	font-weight: 400;
@@ -139,8 +268,16 @@ body{
 	background: var(--primary-100);
 }
 
+.bg-primary-200 {
+	background: var(--primary-200);
+}
+
 .bg-neutral-100 {
 	background: var(--neutral-100);
+}
+
+.p-12 {
+	padding: 12px;
 }
 
 .p-32 {
@@ -152,17 +289,89 @@ body{
 	padding-bottom: 8px;
 }
 
+.py-12{
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
+
+.py-16{
+	padding-top: 16px;
+	padding-bottom: 16px;
+}
+
+.py-24{
+	padding-top: 24px;
+	padding-bottom: 24px;
+}
+
+.py-32 {
+	padding-top: 32px;
+	padding-bottom: 32px;
+}
+
+.py-48 {
+	padding-top: 48px;
+	padding-bottom: 48px;
+}
+
 .py-64 {
 	padding-top: 64px;
 	padding-bottom: 64px;
 }
-
 .pb-48{
 	padding-bottom: 48px;
 }
 
 .pe-8 {
 	padding-right: 8px;
+}
+
+@media (max-width: 767px){
+	.p-md-24{
+		padding: 24px;
+	}
+	.py-md-32{
+		padding-top: 32px;
+		padding-bottom: 32px;
+	}
+	.pb-md-32{
+		padding-bottom: 32px;
+	}
+}
+
+@media (max-width: 576px){
+	.px-sm-12{
+		padding-left: 12px;
+		padding-right: 12px;
+	}
+	.py-sm-12{
+		padding-top: 12px;
+		padding-bottom: 12px;
+	}
+	.py-sm-32{
+		padding-top: 32px;
+		padding-bottom: 32px;
+	}
+}
+
+.me-8{
+	margin-right: 8px;
+}
+
+.me-12{
+	margin-right: 12px;
+}
+
+.me-24{
+	margin-right: 24px;
+}
+
+.me-40{
+	margin-right: 40px;
+}
+
+.me-48{
+	margin-right: 48px;
 }
 
 .mb-4 {
@@ -185,6 +394,33 @@ body{
 	margin-bottom: 48px;
 }
 
+@media(max-width:767px){
+	.mb-md-16{
+		margin-bottom: 16px;
+	}
+	.mb-md-24{
+		margin-bottom: 24px;
+	}
+	.mb-md-32{
+		margin-bottom: 32px;
+	}
+}
+
+@media(max-width:576px){
+	.me-sm-0{
+		margin-right: 0;
+	}
+	.me-sm-16{
+		margin-right: 16px;
+	}
+	.mb-sm-4{
+		margin-bottom: 4px;
+	}
+	.mb-sm-8{
+		margin-bottom: 8px;
+	}
+}
+
 /* page */
 .header {
 	background-image: url(https://github.com/hexschool/2022-web-layout-training/blob/main/2025-week1/hero.png?raw=true);
@@ -199,9 +435,25 @@ body{
 	font-size: 28px;
 }
 
+@media(max-width:767px){
+	.header{
+		padding: 87px 0;
+		background-image: url(https://github.com/hexschool/2022-web-layout-training/blob/main/2025-week3-4/hero-sm.png?raw=true);
+	}
+	.eng-title{
+		font-size: 20px;
+	}
+}
+
 .quote {
 	border-radius: 12px;
 	text-align: center;
+}
+
+@media(max-width: 767px){
+	.quote{
+		text-align: left;
+	}
 }
 
 .intro img {
@@ -230,10 +482,43 @@ body{
 }
 
 .bi {
-	padding-right: 8px;
 	vertical-align: bottom;
 }
 
 .footer {
 	text-align: center;
+}
+
+/* 元件 */
+.btn{
+	border-radius: 4px;
+	padding: 12px 24px;
+	font-size: 16px;
+	line-height: 1.5;
+	font-weight: 500;
+	cursor: pointer;
+	border: none;
+	background: transparent;
+}
+
+@media(max-width: 576px){
+	.btn{
+		padding: 8px 16px;
+	}
+}
+
+.btn-dark{
+	background: var(--neutral-900);
+	color: var(--neutral-0);
+}
+
+.copyright{
+	text-align: center;
+	color: var(--neutral-600);
+	padding-top: 32px;
+	font-size: 14px;
+}
+
+.border{
+	border-top:1px solid var(--neutral-300);
 }
